@@ -1,4 +1,6 @@
 resource "aws_cloudfront_distribution" "front" {
+  aliases = ["twitter.aws.tessy.dev"]
+
   origin {
     domain_name = var.s3.bucket.front.bucket_regional_domain_name
     origin_access_control_id = aws_cloudfront_origin_access_control.front.id
