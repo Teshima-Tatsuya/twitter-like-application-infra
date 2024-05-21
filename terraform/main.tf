@@ -1,3 +1,7 @@
+module "cloudfront" {
+  source = "./modules/cloudfront"
+}
+
 module "ecr" {
   source = "./modules/ecr"
 }
