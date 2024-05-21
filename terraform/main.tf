@@ -2,7 +2,7 @@ module "cloudfront" {
   source = "./modules/cloudfront"
 
   s3 = module.s3.s3
-  certificate_global_arn = local.acm.certificate_global_arn
+  cloudfront = local.cloudfront
 }
 
 module "ecr" {
@@ -16,6 +16,13 @@ module "vpc" {
   vpc_subnet = var.vpc_subnet
   vpc_route = var.vpc_route
   vpc_sg = var.vpc_sg
+}
+
+module "route53" {
+  source = "./modules/route53"
+
+  cloudfront = module.cloudfront.cloudfront
+  route53 = local.route53
 }
 
 module "s3" {

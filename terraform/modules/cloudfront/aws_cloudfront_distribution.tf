@@ -1,5 +1,5 @@
 resource "aws_cloudfront_distribution" "front" {
-  aliases = ["twitter.aws.tessy.dev"]
+  aliases = [var.cloudfront.domain_name]
 
   origin {
     domain_name = var.s3.bucket.front.bucket_regional_domain_name
@@ -38,7 +38,7 @@ resource "aws_cloudfront_distribution" "front" {
   }
 
   viewer_certificate {
-    acm_certificate_arn = var.certificate_global_arn
+    acm_certificate_arn = var.cloudfront.certificate_global_arn
     ssl_support_method = "sni-only"
     minimum_protocol_version = "TLSv1"
   }
