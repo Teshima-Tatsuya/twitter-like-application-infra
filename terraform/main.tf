@@ -22,6 +22,7 @@ module "route53" {
   source = "./modules/route53"
 
   cloudfront = module.cloudfront.cloudfront
+  domain_name = local.cloudfront.domain_name
   route53 = local.route53
 }
 
