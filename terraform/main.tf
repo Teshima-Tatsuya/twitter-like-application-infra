@@ -1,5 +1,8 @@
 module "cloudfront" {
   source = "./modules/cloudfront"
+
+  s3 = module.s3.s3
+  certificate_global_arn = local.acm.certificate_global_arn
 }
 
 module "ecr" {
