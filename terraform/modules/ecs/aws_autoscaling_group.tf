@@ -14,6 +14,12 @@ resource "aws_autoscaling_group" "nginx" {
     version = "$Latest"
   }
 
+  tag {
+    key = "AmazonECSManaged"
+    propagate_at_launch = true
+    value = ""
+  }
+
   lifecycle {
     ignore_changes = [ 
       desired_capacity,
