@@ -75,5 +75,26 @@ variable "vpc_sg" {
         },
       }
     },
+    "sgp-nginx" = {
+      description = "for nginx"
+      rules = {
+        "egress" = {
+          type = "egress"
+          description = "egress all"
+          from = -1
+          to = -1
+          protocol = "ALL"
+          cidr = "0.0.0.0/0"
+        },
+        "ingress-ssh" = {
+            type = "ingress"
+            description = "http"
+            from = 80
+            to = 80
+            protocol = "TCP"
+            cidr = "0.0.0.0/0"
+        },
+      }
+    },
   }
 }  

@@ -11,6 +11,13 @@ module "ecr" {
 
 module "ecs" {
   source = "./modules/ecs"
+
+  iam = module.iam.iam
+  vpc = module.vpc.vpc
+}
+
+module "iam" {
+  source = "./modules/iam"
 }
 
 module "vpc" {
