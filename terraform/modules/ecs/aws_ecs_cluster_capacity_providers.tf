@@ -4,6 +4,6 @@ resource "aws_ecs_cluster_capacity_providers" "nginx" {
   default_capacity_provider_strategy {
     base              = 1
     weight            = 100
-    capacity_provider = "EC2"
+    capacity_provider = aws_ecs_capacity_provider.nginx.name
   }
 }
