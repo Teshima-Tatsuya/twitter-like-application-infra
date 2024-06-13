@@ -1,5 +1,5 @@
 data "aws_ssm_parameter" "amzn2023_arm64_ami" {
-  name = "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-arm64"
+  name = "/aws/service/ecs/optimized-ami/amazon-linux-2023/arm54/recommended"
 }
 
 data "aws_key_pair" "teshima-keypair" {

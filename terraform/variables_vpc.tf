@@ -88,6 +88,14 @@ variable "vpc_sg" {
         },
         "ingress-ssh" = {
             type = "ingress"
+            description = "ssh"
+            from = 22
+            to = 22
+            protocol = "TCP"
+            cidr = "0.0.0.0/0"
+        },
+        "ingress-http" = {
+            type = "ingress"
             description = "http"
             from = 80
             to = 80
