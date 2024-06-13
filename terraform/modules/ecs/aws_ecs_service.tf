@@ -13,7 +13,7 @@ resource "aws_ecs_service" "all" {
       propagate_tags,
       tags,
       capacity_provider_strategy,
-      deployment_circult_breaker,
+      deployment_circuit_breaker,
       deployment_controller,
     ]
   }
