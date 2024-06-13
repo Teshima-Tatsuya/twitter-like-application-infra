@@ -9,11 +9,11 @@ resource "aws_ecs_service" "all" {
   # 以下は毎回差分が出るため設定
   lifecycle {
     ignore_changes = [ 
-      health_check_grace_period,
+      health_check_grace_period_seconds,
       propagate_tags,
       tags,
       capacity_provider_strategy,
-      deployment_circult_breader,
+      deployment_circult_breaker,
       deployment_controller,
     ]
   }
