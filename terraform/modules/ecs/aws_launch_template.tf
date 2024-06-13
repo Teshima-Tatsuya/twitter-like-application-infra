@@ -13,6 +13,11 @@ resource "aws_launch_template" "nginx" {
 
   user_data = base64encode(file("${path.module}/userdata.sh"))
 
+  network_interfaces {
+    associate_public_ip_address = true
+  }
+
+
   tag_specifications {
     resource_type = "instance"
     tags = {
