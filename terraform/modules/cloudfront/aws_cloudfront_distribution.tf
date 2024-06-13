@@ -53,7 +53,7 @@ resource "aws_cloudfront_distribution" "backend" {
     custom_origin_config {
       http_port = "80"
       https_port = "80"
-      origin_protocol_policy = "http"
+      origin_protocol_policy = "http-only"
       origin_ssl_protocols = ["SSLv3"]
     }
   }
