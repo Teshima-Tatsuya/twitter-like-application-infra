@@ -3,9 +3,6 @@ locals {
     "rt-subnet-pub-a" = {
         dest_cidr = "0.0.0.0/0"
     },
-    "rt-subnet-pub-c" = {
-        dest_cidr = "0.0.0.0/0"
-    }
   }
 }
 

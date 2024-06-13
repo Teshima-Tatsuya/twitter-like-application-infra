@@ -12,9 +12,8 @@ resource "aws_launch_template" "nginx" {
   user_data = base64encode(file("${path.module}/userdata.sh"))
 
   network_interfaces {
-    associate_public_ip_address = true
     delete_on_termination = true
-    security_groups = [var.vpc.sg.sgp-nginx.id]
+    network_interface_id = var.vpc.eni_nginx.id
   }
 
 

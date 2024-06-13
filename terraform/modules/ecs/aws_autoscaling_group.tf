@@ -7,7 +7,7 @@ resource "aws_autoscaling_group" "nginx" {
   desired_capacity          = 0
   force_delete              = true
 
-  vpc_zone_identifier = [var.vpc.subnet.subnet-pub-a.id, var.vpc.subnet.subnet-pub-c.id]
+  vpc_zone_identifier = [var.vpc.subnet.subnet-pub-a.id]
 
   launch_template {
     id      = aws_launch_template.nginx.id
