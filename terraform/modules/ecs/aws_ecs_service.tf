@@ -1,4 +1,4 @@
-resource "aws_ecs_service" "nginx" {
+resource "aws_ecs_service" "all" {
   for_each = local.services
   name = each.value.service_name
 
