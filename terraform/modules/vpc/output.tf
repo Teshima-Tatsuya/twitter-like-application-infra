@@ -4,5 +4,6 @@ output "vpc" {
         sg = aws_security_group.all
         vpc = aws_vpc.main
         eni_nginx = aws_network_interface.nginx
+        eip_nginx = aws_eip.nginx
     }
 }
