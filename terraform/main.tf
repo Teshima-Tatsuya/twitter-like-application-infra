@@ -35,6 +35,7 @@ module "route53" {
 
   cloudfront = module.cloudfront.cloudfront
   domain_name = local.cloudfront.domain_name
+  backend_domain_name = local.cloudfront.backend_domain_name
   route53 = local.route53
 }
 

@@ -11,7 +11,7 @@ resource "aws_route53_record" "front" {
 }
 
 resource "aws_route53_record" "backend" {
-  name = var.domain_name
+  name = var.backend_domain_name
   type = "A"
   zone_id = var.route53.zone_id
 
