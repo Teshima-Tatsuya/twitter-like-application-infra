@@ -93,4 +93,8 @@ resource "aws_cloudfront_distribution" "backend" {
     ssl_support_method = "sni-only"
     minimum_protocol_version = "TLSv1"
   }
+
+  depends_on = [
+    module.ecs
+  ]
 }
