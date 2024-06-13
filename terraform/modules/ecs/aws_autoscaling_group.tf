@@ -7,7 +7,7 @@ resource "aws_autoscaling_group" "nginx" {
   desired_capacity          = 0
   force_delete              = true
 
-  availability_zones = ["ap-north-east-1"]
+  availability_zones = ["ap-northeast-1a"]
   launch_template {
     id      = aws_launch_template.nginx.id
     version = "$Latest"
