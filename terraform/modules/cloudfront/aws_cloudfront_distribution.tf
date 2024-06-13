@@ -64,7 +64,7 @@ resource "aws_cloudfront_distribution" "backend" {
   default_cache_behavior {
     allowed_methods = ["GET", "HEAD", "OPTIONS"]
     cached_methods = ["GET", "HEAD", "OPTIONS"]
-    target_origin_id = "front"
+    target_origin_id = "backend"
 
     forwarded_values {
       query_string = false
