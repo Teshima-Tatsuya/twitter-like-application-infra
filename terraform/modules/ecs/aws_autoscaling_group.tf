@@ -4,7 +4,7 @@ resource "aws_autoscaling_group" "nginx" {
   min_size                  = 0
   health_check_grace_period = 180
   health_check_type         = "EC2"
-  desired_capacity          = 0
+  desired_capacity          = 1
   force_delete              = true
 
   availability_zones = ["ap-northeast-1a"]
