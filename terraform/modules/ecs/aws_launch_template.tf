@@ -12,7 +12,6 @@ resource "aws_launch_template" "nginx" {
   user_data = base64encode(file("${path.module}/userdata.sh"))
 
   network_interfaces {
-    delete_on_termination = true
     network_interface_id = var.vpc.eni_nginx.id
   }
 
