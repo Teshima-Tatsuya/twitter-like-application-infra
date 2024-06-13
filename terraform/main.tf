@@ -4,6 +4,10 @@ module "cloudfront" {
   s3 = module.s3.s3
   cloudfront = local.cloudfront
   vpc = module.vpc.vpc
+
+  depends_on = [ 
+    module.ecs
+  ]
 }
 
 module "ecr" {
