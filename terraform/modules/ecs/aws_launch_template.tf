@@ -7,14 +7,14 @@ resource "aws_launch_template" "nginx" {
   iam_instance_profile {
     name = var.iam.profile.name
   }
-  vpc_security_group_ids = [var.vpc.sg.sgp-nginx.id]
-
   update_default_version = true
 
   user_data = base64encode(file("${path.module}/userdata.sh"))
 
   network_interfaces {
     associate_public_ip_address = true
+    delete_on_termination = true
+    security_groups = [var.vpc.sg.sgp-nginx.id]
   }
 
 
