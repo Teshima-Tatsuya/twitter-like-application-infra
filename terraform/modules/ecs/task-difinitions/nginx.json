@@ -19,7 +19,6 @@
         "awslogs-stream-prefix": "nginx",
         "awslogs-group": "/ecs/project/dev/web"
       }
-    },
-    "networkMode": "bridge" 
+    }
   }
 ]
