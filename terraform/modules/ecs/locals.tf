@@ -3,8 +3,8 @@ locals {
     nginx = {
         service_name = "nginx-service"
     }
-    rails = {
+    # rails = {
 
-    }
+    # }
   }
 }
