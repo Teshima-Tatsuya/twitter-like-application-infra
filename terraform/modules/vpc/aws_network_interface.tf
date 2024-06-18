@@ -4,6 +4,6 @@ resource "aws_network_interface" "nginx" {
 }
 
 resource "aws_network_interface" "rails" {
-  subnet_id = aws_subnet.all["subnet-pub-a"].id
+  subnet_id = aws_subnet.all["subnet-pri-a"].id
   security_groups = [aws_security_group.all["sgp-rails"].id]
 }
