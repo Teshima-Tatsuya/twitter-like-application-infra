@@ -85,5 +85,34 @@ variable "vpc_sg" {
         },
       }
     },
+    "sgp-rails" = {
+      description = "for rails"
+      rules = {
+        "egress" = {
+          type = "egress"
+          description = "egress all"
+          from = -1
+          to = -1
+          protocol = "ALL"
+          cidr = "0.0.0.0/0"
+        },
+        "ingress-ssh" = {
+            type = "ingress"
+            description = "ssh"
+            from = 22
+            to = 22
+            protocol = "TCP"
+            cidr = "0.0.0.0/0"
+        },
+        "ingress-http" = {
+            type = "ingress"
+            description = "http"
+            from = 3000
+            to = 3000
+            protocol = "TCP"
+            cidr = "0.0.0.0/0"
+        },
+      }
+    },
   }
 }  
