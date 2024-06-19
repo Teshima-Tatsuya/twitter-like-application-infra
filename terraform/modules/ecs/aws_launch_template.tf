@@ -1,6 +1,8 @@
-resource "aws_launch_template" "nginx" {
-  name        = "lt-nginx"
-  description = "launch template for nginx"
+resource "aws_launch_template" "all" {
+  for_each = local.services
+
+  name        = "lt-${each.key}"
+  description = "launch template for ${each.key}"
 
   image_id      = jsondecode(data.aws_ssm_parameter.amzn2023_arm64_ami.value).image_id
   instance_type = "t4g.small"
@@ -12,41 +14,14 @@ resource "aws_launch_template" "nginx" {
   user_data = base64encode(file("${path.module}/userdata.sh"))
 
   network_interfaces {
-    network_interface_id = var.vpc.eni_nginx.id
+    network_interface_id = var.vpc.eni[each.key].id
   }
 
 
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name       = "nginx"
-      ServerType = "Web"
-    }
-  }
-}
-
-resource "aws_launch_template" "rails" {
-  name        = "lt-rails"
-  description = "launch template for rails"
-
-  image_id      = jsondecode(data.aws_ssm_parameter.amzn2023_arm64_ami.value).image_id
-  instance_type = "t4g.small"
-  iam_instance_profile {
-    name = var.iam.profile.name
-  }
-  update_default_version = true
-
-  user_data = base64encode(file("${path.module}/userdata.sh"))
-
-  network_interfaces {
-    network_interface_id = var.vpc.eni_rails.id
-  }
-
-
-  tag_specifications {
-    resource_type = "instance"
-    tags = {
-      Name       = "rails"
+      Name       = each.key
       ServerType = "Web"
     }
   }
