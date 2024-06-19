@@ -9,6 +9,10 @@ resource "aws_ecs_service" "all" {
   service_connect_configuration {
     enabled = true
     namespace = aws_service_discovery_http_namespace.all[each.key].arn
+    service {
+      port_name = each.value.port_name
+      discovery_name = each.value.service_name
+    }
   }
 
   # 以下は毎回差分が出るため設定
