@@ -3,7 +3,7 @@ resource "aws_ecs_service" "all" {
   name = each.value.service_name
 
   cluster = aws_ecs_cluster.twitter.arn
-  task_definition = aws_ecs_task_definition.nginx.arn
+  task_definition = aws_ecs_task_definition.all[each.key].arn
   desired_count = 1
 
   service_connect_configuration {
