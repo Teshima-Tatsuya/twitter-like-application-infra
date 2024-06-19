@@ -6,6 +6,11 @@ resource "aws_ecs_service" "all" {
   task_definition = aws_ecs_task_definition.nginx.arn
   desired_count = 1
 
+  service_connect_configuration {
+    enabled = true
+    namespace = aws_service_discovery_http_namespace.all[each.key].arn
+  }
+
   # 以下は毎回差分が出るため設定
   lifecycle {
     ignore_changes = [ 
