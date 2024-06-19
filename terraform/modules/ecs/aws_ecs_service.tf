@@ -11,7 +11,10 @@ resource "aws_ecs_service" "all" {
     namespace = aws_service_discovery_http_namespace.all[each.key].arn
     service {
       port_name = each.value.port_name
-      discovery_name = each.value.service_name
+      client_alias {
+        dns_name = each.value.service_name
+        port = 80
+      }
     }
   }
 
