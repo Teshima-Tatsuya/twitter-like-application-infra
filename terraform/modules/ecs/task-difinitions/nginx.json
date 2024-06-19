@@ -10,6 +10,7 @@
         "name": "http-80",
         "containerPort": 80,
         "protocol": "tcp",
+        "appProtocol": "http",
         "hostPort": 80
       }
     ],
