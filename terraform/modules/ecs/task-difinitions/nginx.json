@@ -1,6 +1,6 @@
 [
   {
-    "name": "nginx",
+    "name": "${name}",
     "image": "nginx:latest",
     "cpu": 256,
     "memory": 256,
