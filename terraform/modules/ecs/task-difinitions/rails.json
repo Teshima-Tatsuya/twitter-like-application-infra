@@ -1,0 +1,26 @@
+[
+  {
+    "name": "${name}",
+    "image": "827079964324.dkr.ecr.ap-northeast-1.amazonaws.com/rails:latest",
+    "cpu": 256,
+    "memory": 256,
+    "essential": true,
+    "portMappings": [
+      {
+        "name": "http-3000",
+        "containerPort": 3000,
+        "protocol": "tcp",
+        "appProtocol": "http",
+        "hostPort": 3000
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-region": "ap-northeast-1",
+        "awslogs-stream-prefix": "rails",
+        "awslogs-group": "/ecs/project/dev/web"
+      }
+    }
+  }
+]

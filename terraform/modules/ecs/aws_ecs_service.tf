@@ -13,7 +13,7 @@ resource "aws_ecs_service" "all" {
       port_name = each.value.port_name
       client_alias {
         dns_name = each.value.service_name
-        port = 80
+        port = each.value.port
       }
     }
   }
