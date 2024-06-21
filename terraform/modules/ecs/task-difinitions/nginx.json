@@ -1,7 +1,7 @@
 [
   {
     "name": "${name}",
-    "image": "nginx:latest",
+    "image": "827079964324.dkr.ecr.ap-northeast-1.amazonaws.com/nginx:latest",
     "cpu": 256,
     "memory": 256,
     "essential": true,
