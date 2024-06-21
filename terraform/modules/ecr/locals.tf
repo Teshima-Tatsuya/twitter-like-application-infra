@@ -1,0 +1,8 @@
+locals {
+  services = {
+    nginx = {
+    }
+    rails = {
+    }
+  }
+}
