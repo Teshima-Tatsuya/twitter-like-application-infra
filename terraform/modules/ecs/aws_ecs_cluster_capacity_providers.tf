@@ -1,7 +1,7 @@
 resource "aws_ecs_cluster_capacity_providers" "all" {
   cluster_name = aws_ecs_cluster.twitter.name
 
-  # capacity_providers = keys(local.services)
+  capacity_providers = keys(local.services)
 
   dynamic "default_capacity_provider_strategy" {
     for_each = local.services
