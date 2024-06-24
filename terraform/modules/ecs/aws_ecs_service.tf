@@ -6,6 +6,12 @@ resource "aws_ecs_service" "all" {
   task_definition = aws_ecs_task_definition.all[each.key].arn
   desired_count = 1
 
+  capacity_provider_strategy {
+    base = 1
+    capacity_provider = each.key
+    weight = 100
+  }
+
   service_connect_configuration {
     enabled = true
     namespace = aws_service_discovery_http_namespace.all[each.key].arn
