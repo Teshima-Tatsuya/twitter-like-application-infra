@@ -14,6 +14,12 @@
         "hostPort": 3000
       }
     ],
+    "environment": [
+      {
+        "name": "RAILS_ENV",
+        "value": "development"
+      }
+    ],
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {
