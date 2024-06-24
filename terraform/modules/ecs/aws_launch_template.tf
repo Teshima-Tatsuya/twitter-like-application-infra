@@ -11,7 +11,7 @@ resource "aws_launch_template" "all" {
   }
   update_default_version = true
 
-  user_data = base64encode(file("${path.module}/userdata.sh"))
+  user_data = base64encode(file("${path.module}/userdata_${each.key}.sh"))
 
   network_interfaces {
     network_interface_id = var.vpc.eni[each.key].id
