@@ -1,6 +1,6 @@
 resource "aws_db_instance" "main" {
   allocated_storage = 20
-  instance_class = "t4g.micro"
+  instance_class = "db.t4g.micro"
   engine = "postgres"
   username = "postgres"
   password = "postgres"
