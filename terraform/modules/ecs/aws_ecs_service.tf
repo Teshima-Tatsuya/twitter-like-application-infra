@@ -8,7 +8,7 @@ resource "aws_ecs_service" "all" {
 
   capacity_provider_strategy {
     base = 1
-    capacity_provider = each.key
+    capacity_provider = "main"
     weight = 100
   }
 
