@@ -34,6 +34,10 @@ module "vpc" {
   vpc_sg = var.vpc_sg
 }
 
+module "rds" {
+  source = "./modules/rds"
+}
+
 module "route53" {
   source = "./modules/route53"
 
