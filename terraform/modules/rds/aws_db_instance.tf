@@ -7,4 +7,6 @@ resource "aws_db_instance" "main" {
   max_allocated_storage = 0 # disable autoscaling
   db_subnet_group_name = aws_db_subnet_group.main.name
 
+  identifier = "postgresql-service"
+
 }
