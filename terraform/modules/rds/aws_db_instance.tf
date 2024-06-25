@@ -9,4 +9,6 @@ resource "aws_db_instance" "main" {
 
   identifier = "postgresql-service"
 
+  vpc_security_group_ids = [var.vpc.sg.sgp-rds.id]
+
 }

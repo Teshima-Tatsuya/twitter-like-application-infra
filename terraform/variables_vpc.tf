@@ -119,5 +119,26 @@ variable "vpc_sg" {
         },
       }
     },
+    "sgp-rds" = {
+      description = "for rds"
+      rules = {
+        "egress" = {
+          type = "egress"
+          description = "egress all"
+          from = -1
+          to = -1
+          protocol = "ALL"
+          cidr = "0.0.0.0/0"
+        },
+        "ingress-postgres" = {
+            type = "ingress"
+            description = "postgres"
+            from = 5432
+            to = 5432
+            protocol = "TCP"
+            cidr = "0.0.0.0/0"
+        },
+      }
+    },
   }
 }  
