@@ -1,13 +1,10 @@
-resource "aws_ecs_cluster_capacity_providers" "all" {
+resource "aws_ecs_cluster_capacity_providers" "main" {
   cluster_name = aws_ecs_cluster.twitter.name
 
-  capacity_providers = keys(local.services)
+  capacity_providers = ["main"]
 
-  dynamic "default_capacity_provider_strategy" {
-    for_each = local.services
-    content {
-      weight = 1
-      capacity_provider = aws_ecs_capacity_provider.all[default_capacity_provider_strategy.key].name
-    }
+  default_capacity_provider_strategy {
+    weight = 1
+    capacity_provider = aws_ecs_capacity_provider.main.name
   }
 }
