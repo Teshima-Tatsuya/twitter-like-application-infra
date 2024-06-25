@@ -36,6 +36,8 @@ module "vpc" {
 
 module "rds" {
   source = "./modules/rds"
+
+  vpc = module.vpc.vpc
 }
 
 module "route53" {
