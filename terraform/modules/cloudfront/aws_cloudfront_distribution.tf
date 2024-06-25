@@ -48,7 +48,7 @@ resource "aws_cloudfront_distribution" "backend" {
   aliases = [var.cloudfront.backend_domain_name]
 
   origin {
-    domain_name = var.vpc.eip_nginx.public_dns
+    domain_name = var.vpc.eip.public_dns
     origin_id = "backend"
     custom_origin_config {
       http_port = "80"

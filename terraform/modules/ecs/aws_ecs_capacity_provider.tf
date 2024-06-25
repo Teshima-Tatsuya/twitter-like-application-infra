@@ -4,6 +4,6 @@ resource "aws_ecs_capacity_provider" "all" {
   name = each.key
 
   auto_scaling_group_provider {
-    auto_scaling_group_arn = aws_autoscaling_group.all[each.key].arn
+    auto_scaling_group_arn = aws_autoscaling_group.main.arn
   }
 }

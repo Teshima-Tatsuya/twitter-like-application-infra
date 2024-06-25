@@ -1,7 +1,5 @@
-resource "aws_autoscaling_group" "all" {
-  for_each = local.services
-
-  name                      = each.key
+resource "aws_autoscaling_group" "main" {
+  name                      = "main"
   max_size                  = 1
   min_size                  = 0
   health_check_grace_period = 180
@@ -11,7 +9,7 @@ resource "aws_autoscaling_group" "all" {
 
   availability_zones = ["ap-northeast-1a"]
   launch_template {
-    id      = aws_launch_template.all[each.key].id
+    id      = aws_launch_template.main.id
     version = "$Latest"
   }
 
