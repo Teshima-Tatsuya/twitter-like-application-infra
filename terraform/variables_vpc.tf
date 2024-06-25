@@ -16,6 +16,11 @@ variable "vpc_subnet" {
       cidr_block_bit  = 0
       az              = "ap-northeast-1a"
     },
+    "subnet-pri-c" = {
+      cidr_block_host = 2
+      cidr_block_bit  = 1
+      az              = "ap-northeast-1c"
+    },
   }
 }
 
