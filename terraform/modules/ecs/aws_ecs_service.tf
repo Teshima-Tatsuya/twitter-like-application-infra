@@ -14,7 +14,7 @@ resource "aws_ecs_service" "all" {
 
   service_connect_configuration {
     enabled = true
-    namespace = aws_service_discovery_http_namespace.all[each.key].arn
+    namespace = aws_service_discovery_http_namespace.main.arn
     service {
       port_name = each.value.port_name
       client_alias {

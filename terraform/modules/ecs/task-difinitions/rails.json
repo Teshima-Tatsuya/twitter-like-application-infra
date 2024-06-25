@@ -17,7 +17,23 @@
     "environment": [
       {
         "name": "RAILS_ENV",
-        "value": "development"
+        "value": "production"
+      },
+      {
+        "name": "DB_USERNAME",
+        "value": ""
+      },
+      {
+        "name": "DB_PASSWORD",
+        "value": ""
+      },
+      {
+        "name": "DB_HOST",
+        "value": ""
+      },
+      {
+        "name": "SECRET_KEY_BASE",
+        "value": ""
       }
     ],
     "logConfiguration": {
