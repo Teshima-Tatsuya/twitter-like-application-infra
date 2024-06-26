@@ -59,10 +59,9 @@ resource "aws_cloudfront_distribution" "backend" {
   }
 
   enabled = true
-  default_root_object = "index.html"
 
   default_cache_behavior {
-    allowed_methods = ["GET", "HEAD", "OPTIONS"]
+    allowed_methods = ["GET", "HEAD", "OPTIONS", "DELETE", "PATCH", "POST", "PUT"]
     cached_methods = ["GET", "HEAD", "OPTIONS"]
     target_origin_id = "backend"
 
