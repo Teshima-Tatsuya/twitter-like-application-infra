@@ -54,3 +54,11 @@ module "s3" {
   s3_bucket_name = var.s3_bucket_name
   cloudfront = module.cloudfront.cloudfront
 }
+
+module "ssm" {
+  source = "./modules/ssm"
+  DB_HOST = var.DB_HOST
+  DB_USERNAME = var.DB_USERNAME
+  DB_PASSWORD = var.DB_PASSWORD
+  SECRET_KEY_BASE = var.SECRET_KEY_BASE
+}
