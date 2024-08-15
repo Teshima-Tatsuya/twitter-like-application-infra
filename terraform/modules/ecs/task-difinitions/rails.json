@@ -18,7 +18,9 @@
       {
         "name": "RAILS_ENV",
         "value": "production"
-      },
+      }
+    ],
+    "secrets": [
       {
         "name": "DB_USERNAME",
         "valueFrom": "/ecs/x/DB_USERNAME"
