@@ -16,3 +16,10 @@ resource "aws_iam_role" "nginx" {
   path               = "/"
   assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
 }
+
+## For RDS
+resource "aws_iam_role" "stop-rds" {
+  name               = "stop-rds"
+  path               = "/"
+  assume_role_policy = data.aws_iam_policy_document.assume_role_policy-scheduler.json
+}

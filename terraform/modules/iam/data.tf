@@ -46,9 +46,20 @@ data "aws_iam_policy_document" "ecs-execution-ssm" {
   }
 }
 
-data "aws_iam_policy_document" "StopRDS" {
+## For RDS
+data "aws_iam_policy_document" "assume_role_policy-scheduler" {
   statement {
-    actions = ["*"]
+    actions = ["sts:AssumeRole"]
+    principals {
+      type        = "Service"
+      identifiers = ["scheduler.amazonaws.com"]
+    }
+  }
+}
+
+data "aws_iam_policy_document" "stop-rds" {
+  statement {
+    actions = ["rds:StopDBInstance"]
     resources = [
       "*"
     ]
