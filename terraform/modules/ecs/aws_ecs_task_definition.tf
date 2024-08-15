@@ -6,7 +6,10 @@ resource "aws_ecs_task_definition" "all" {
   })
   network_mode = "bridge"
   requires_compatibilities = ["EC2"]
-  task_role_arn = var.iam.role_ecsInstanceRole.arn
+  task_role_arn = var.iam.role.ecsInstanceRole.arn
+  execution_role_arn = var.iam.role.ecsExecutionRole.arn
+
+
   runtime_platform {
     cpu_architecture = "ARM64"
   }

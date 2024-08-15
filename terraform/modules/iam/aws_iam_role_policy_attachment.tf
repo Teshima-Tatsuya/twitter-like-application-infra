@@ -8,6 +8,11 @@ resource "aws_iam_role_policy_attachment" "ecsInstanceRole-AmazonSSMManagedInsta
   policy_arn = data.aws_iam_policy.AmazonSSMManagedInstanceCore.arn
 }
 
+resource "aws_iam_role_policy_attachment" "ecsExecutionRole-ssm" {
+  role       = aws_iam_role.ecsExecutionRole.name
+  policy_arn = data.aws_iam_policy.ecsExecutionRole-ssm.arn
+}
+
 resource "aws_iam_role_policy_attachment" "nginx" {
   role       = aws_iam_role.nginx.name
   policy_arn = aws_iam_policy.nginx.arn

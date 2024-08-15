@@ -21,19 +21,19 @@
       },
       {
         "name": "DB_USERNAME",
-        "value": ""
+        "valueFrom": "/ecs/x/DB_USERNAME"
       },
       {
         "name": "DB_PASSWORD",
-        "value": ""
+        "valueFrom": "/ecs/x/DB_PASSWORD"
       },
       {
         "name": "DB_HOST",
-        "value": ""
+        "valueFrom": "/ecs/x/DB_HOST"
       },
       {
         "name": "SECRET_KEY_BASE",
-        "value": ""
+        "valueFrom": "/ecs/x/SECRET_KEY_BASE"
       }
     ],
     "logConfiguration": {
