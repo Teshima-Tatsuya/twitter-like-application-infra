@@ -57,7 +57,7 @@ module "s3" {
 
 module "ssm" {
   source = "./modules/ssm"
-  DB_HOST = var.DB_HOST
+  DB_HOST = module.rds.rds.host
   DB_USERNAME = var.DB_USERNAME
   DB_PASSWORD = var.DB_PASSWORD
   SECRET_KEY_BASE = var.SECRET_KEY_BASE
