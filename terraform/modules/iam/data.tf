@@ -18,7 +18,7 @@ data "aws_iam_policy_document" "assume_role_policy" {
 
 ## For ECS
 ### ECS Task
-data "aws_iam_policy_document" "assume_role_policy_ecs-tasks" {
+data "aws_iam_policy_document" "assume_role_policy-ecs-tasks" {
   statement {
     actions = ["sts:AssumeRole"]
     principals {
