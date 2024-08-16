@@ -1,3 +1,4 @@
 resource "aws_s3_bucket" "front" {
-  bucket = var.s3_bucket_name
+  bucket_prefix = var.s3_bucket_name
+  force_destroy = true
 }
