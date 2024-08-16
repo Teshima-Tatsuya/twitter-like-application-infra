@@ -10,6 +10,10 @@ resource "aws_db_instance" "main" {
 
   identifier = "postgresql-service"
 
+  # delete config
+  deletion_protection = false
+  skip_final_snapshot = true
+
   vpc_security_group_ids = [var.vpc.sg.sgp-rds.id]
 
 }
