@@ -56,6 +56,18 @@ resource "aws_cloudfront_distribution" "backend" {
       origin_protocol_policy = "http-only"
       origin_ssl_protocols = ["SSLv3"]
     }
+    custom_header {
+      name = "Access-Control-Allow-origin"
+      value = "*"
+    }
+    custom_header {
+      name = "Access-Control-Allow-Methods"
+      value = "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+    }
+    custom_header {
+      name = "Access-Control-Allow-Headers"
+      value = "Content-Type, Authorization"
+    }
   }
 
   enabled = true
