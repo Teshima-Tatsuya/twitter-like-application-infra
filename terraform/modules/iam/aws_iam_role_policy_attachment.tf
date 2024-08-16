@@ -18,7 +18,7 @@ resource "aws_iam_role_policy_attachment" "ecsExecutionRole-AmazonEC2ContainerSe
   policy_arn = data.aws_iam_policy.AmazonEC2ContainerServiceforEC2Role.arn
 }
 
-resource "aws_iam_role_policy_attachment" "nginx" {
-  role       = aws_iam_role.nginx.name
-  policy_arn = aws_iam_policy.nginx.arn
+resource "aws_iam_role_policy_attachment" "ec2-" {
+  role       = aws_iam_role.ec2.name
+  policy_arn = aws_iam_policy.ec2.arn
 }

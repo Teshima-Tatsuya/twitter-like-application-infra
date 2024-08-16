@@ -28,7 +28,7 @@ data "aws_iam_policy_document" "assume_role_policy-ecs-tasks" {
   }
 }
 
-data "aws_iam_policy_document" "nginx" {
+data "aws_iam_policy_document" "ec2" {
   statement {
     actions = ["*"]
     resources = [

@@ -11,8 +11,8 @@ resource "aws_iam_role" "ecsExecutionRole" {
 }
 
 
-resource "aws_iam_role" "nginx" {
-  name               = "nginx"
+resource "aws_iam_role" "ec2" {
+  name               = "ec2"
   path               = "/"
   assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
 }

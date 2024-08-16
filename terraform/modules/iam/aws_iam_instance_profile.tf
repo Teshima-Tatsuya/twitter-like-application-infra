@@ -1,4 +1,4 @@
-resource "aws_iam_instance_profile" "nginx" {
-    name = "nginx"
-    role = aws_iam_role.nginx.name
+resource "aws_iam_instance_profile" "ec2" {
+    name = "ec2"
+    role = aws_iam_role.ec2.name
 }
