@@ -67,7 +67,7 @@ resource "aws_cloudfront_distribution" "backend" {
 
     forwarded_values {
       query_string = false
-      headers = ["Origin"]
+      headers = ["Origin", "Authorization"]
 
       cookies {
         forward = "none"
