@@ -40,27 +40,6 @@ variable "vpc_route" {
 
 variable "vpc_sg" {
   default = {
-    "sgp-eice" = {
-      description = "for vpce"
-      rules = {
-        "egress" = {
-          type = "egress"
-          description = "egress all"
-          from = -1
-          to = -1
-          protocol = "ALL"
-          cidr = "0.0.0.0/0"
-        },
-        "ingress-ssh" = {
-            type = "ingress"
-            description = "ssh"
-            from = 22
-            to = 22
-            protocol = "TCP"
-            cidr = "0.0.0.0/0"
-        },
-      }
-    },
     "sgp-main" = {
       description = "for main"
       rules = {
@@ -71,14 +50,6 @@ variable "vpc_sg" {
           to = -1
           protocol = "ALL"
           cidr = "0.0.0.0/0"
-        },
-        "ingress-ssh" = {
-            type = "ingress"
-            description = "ssh"
-            from = 22
-            to = 22
-            protocol = "TCP"
-            cidr = "0.0.0.0/0"
         },
         "ingress-http" = {
             type = "ingress"
