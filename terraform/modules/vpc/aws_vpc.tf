@@ -1,8 +1,8 @@
-resource "aws_vpc" "main" {
+resource "aws_vpc" "x" {
     cidr_block = var.vpc_cidr
     enable_dns_hostnames = true
 
     tags = {
-        Name = "twitter-vpc"
+        Name = "x-vpc"
     }
 }

@@ -1,8 +1,8 @@
-resource "aws_eip" "main" {
+resource "aws_eip" "ec2" {
   domain = "vpc"
-  network_interface = aws_network_interface.main.id
+  network_interface = aws_network_interface.ec2.id
 
   depends_on = [ 
-    aws_internet_gateway.main
+    aws_internet_gateway.x
   ]
 }

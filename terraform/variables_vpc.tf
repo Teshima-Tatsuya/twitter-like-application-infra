@@ -40,8 +40,8 @@ variable "vpc_route" {
 
 variable "vpc_sg" {
   default = {
-    "sgp-main" = {
-      description = "for main"
+    "sgp-ec2" = {
+      description = "for ec2"
       rules = {
         "egress" = {
           type = "egress"
