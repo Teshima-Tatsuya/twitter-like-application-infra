@@ -6,6 +6,7 @@ resource "aws_db_instance" "main" {
   password = "postgres"
   max_allocated_storage = 0 # disable autoscaling
   db_subnet_group_name = aws_db_subnet_group.main.name
+  parameter_group_name = aws_db_parameter_group.default.name
 
   identifier = "postgresql-service"
 
