@@ -1,5 +1,5 @@
-resource "aws_autoscaling_group" "main" {
-  name                      = "main"
+resource "aws_autoscaling_group" "x" {
+  name                      = "x"
   max_size                  = 1
   min_size                  = 0
   health_check_grace_period = 180
@@ -9,7 +9,7 @@ resource "aws_autoscaling_group" "main" {
 
   availability_zones = ["ap-northeast-1a"]
   launch_template {
-    id      = aws_launch_template.main.id
+    id      = aws_launch_template.x.id
     version = "$Latest"
   }
 

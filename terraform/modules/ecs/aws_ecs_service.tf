@@ -2,19 +2,19 @@ resource "aws_ecs_service" "all" {
   for_each = local.services
   name = each.value.service_name
 
-  cluster = aws_ecs_cluster.twitter.arn
+  cluster = aws_ecs_cluster.x.arn
   task_definition = aws_ecs_task_definition.all[each.key].arn
   desired_count = 1
 
   capacity_provider_strategy {
     base = 1
-    capacity_provider = "main"
+    capacity_provider = "x"
     weight = 100
   }
 
   service_connect_configuration {
     enabled = true
-    namespace = aws_service_discovery_http_namespace.main.arn
+    namespace = aws_service_discovery_http_namespace.x.arn
     service {
       port_name = each.value.port_name
       client_alias {

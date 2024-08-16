@@ -1,4 +1,4 @@
-resource "aws_service_discovery_http_namespace" "main" {
-  name = "twitter-like-applicaiton"
-  description = "twitter like application"
+resource "aws_service_discovery_http_namespace" "x" {
+  name = "x-like-applicaiton"
+  description = "x like application"
 }

@@ -11,5 +11,5 @@ resource "aws_route" "pub" {
 
     route_table_id = aws_route_table.all[each.key].id
     destination_cidr_block = each.value.dest_cidr
-    gateway_id = aws_internet_gateway.main.id
+    gateway_id = aws_internet_gateway.x.id
 }

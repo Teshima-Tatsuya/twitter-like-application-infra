@@ -1,2 +1,2 @@
 #!/bin/bash 
-echo ECS_CLUSTER=twitter >> /etc/ecs/ecs.config
+echo ECS_CLUSTER=x >> /etc/ecs/ecs.config

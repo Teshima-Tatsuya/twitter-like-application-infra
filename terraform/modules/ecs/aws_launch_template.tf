@@ -1,6 +1,6 @@
-resource "aws_launch_template" "main" {
-  name        = "lt-main"
-  description = "launch template for main"
+resource "aws_launch_template" "x" {
+  name        = "lt-x"
+  description = "launch template for x"
 
   image_id      = jsondecode(data.aws_ssm_parameter.amzn2023_arm64_ami.value).image_id
   instance_type = "t4g.small"
@@ -20,7 +20,7 @@ resource "aws_launch_template" "main" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name       = "twitter-like-application"
+      Name       = "x-like-application"
       ServerType = "Web"
     }
   }

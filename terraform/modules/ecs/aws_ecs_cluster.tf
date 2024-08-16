@@ -1,3 +1,3 @@
-resource "aws_ecs_cluster" "twitter" {
-  name = "twitter"
+resource "aws_ecs_cluster" "x" {
+  name = "x"
 }

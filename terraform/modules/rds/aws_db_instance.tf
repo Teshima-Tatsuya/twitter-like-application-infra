@@ -1,11 +1,11 @@
-resource "aws_db_instance" "main" {
+resource "aws_db_instance" "x" {
   allocated_storage = 20
   instance_class = "db.t4g.micro"
   engine = "postgres"
   username = "postgres"
   password = "postgres"
   max_allocated_storage = 0 # disable autoscaling
-  db_subnet_group_name = aws_db_subnet_group.main.name
+  db_subnet_group_name = aws_db_subnet_group.x.name
 
   identifier = "postgresql-service"
 
