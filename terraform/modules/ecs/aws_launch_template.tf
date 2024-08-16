@@ -8,8 +8,6 @@ resource "aws_launch_template" "main" {
     name = var.iam.profile.name
   }
 
-  key_name = data.aws_key_pair.teshima-keypair.key_name
-
   update_default_version = true
 
   user_data = base64encode(file("${path.module}/userdata.sh"))
