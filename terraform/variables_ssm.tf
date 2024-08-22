@@ -1,7 +1,3 @@
-variable "DB_HOST" {
-  type = string
-}
-
 variable "DB_USERNAME" {
   type = string
 }
